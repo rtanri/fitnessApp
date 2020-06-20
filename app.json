@@ -1,0 +1,17 @@
+{
+  "name": "FitnessApp",
+  "displayName": "FitnessApp",
+  "expo": {
+    "name": "FitnessApp",
+    "slug": "FitnessApp",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
