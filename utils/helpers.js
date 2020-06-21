@@ -46,7 +46,7 @@ export function timeToString (time = Date.now()) {
   }
 
 export function getMetricMetaInfo(metric) {
-      const info {
+      const info ={
           run: {
               displayName:'Run',
               max: 50,
@@ -133,7 +133,7 @@ export function getMetricMetaInfo(metric) {
               )
           }},
       }
-    return type metric === 'undefined'
+    return typeof metric === 'undefined'
     ? info
     : info[metric]
 }

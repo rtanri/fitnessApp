@@ -1,7 +1,6 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {Ionicons} from  '@expo/vector-icons'
-import { FontAwesome5 } from '@expo/vector-icons'; 
+import React from 'react'
+import { View } from 'react-native'
+import AddEntry from './components/AddEntry'
 
 
 export default class App extends React.Component {
@@ -12,22 +11,10 @@ export default class App extends React.Component {
   }
   render(){
     return (
-      <View style={styles.container}>
-        <Text>Welcome to React Native!</Text>
-        <Ionicons name='ios-pizza' color='blue' size={80}/>
-        
-        <FontAwesome5 name="dumbbell" size={80} color="blue" />
-
+      <View>
+        <AddEntry />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});
