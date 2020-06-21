@@ -83,55 +83,57 @@ export function getMetricMetaInfo(metric) {
                     )
                 }
             },
-        swim: {displayName:'Swim',
-            max: 9900,
-            unit:'m',
-            step: 100,
-            type: 'steppers',
-            getIcon(){
-                return (
-                    <View>
-                        <MaterialCommunityIcons
-                            name='swim'
-                            color={'black'}
-                            size={35}
-                        />
-                    </View>
-                )
-            }
+            swim: {displayName:'Swim',
+                max: 9900,
+                unit:'m',
+                step: 100,
+                type: 'steppers',
+                getIcon(){
+                    return (
+                        <View>
+                            <MaterialCommunityIcons
+                                name='swim'
+                                color={'black'}
+                                size={35}
+                            />
+                        </View>
+                    )
+                }
             },
-          sleep: {displayName:'Sleep',
-          max: 24,
-          unit:'hours',
-          step: 1,
-          type: 'slider',
-          getIcon(){
-              return (
-                <View>
-                    <FontAwesome
-                        name='bed'
-                        color={'black'}
-                        size={35}
-                    />
-                </View>
-              )
-          }},
-          eat: {displayName:'Eat',
-          max: 2200,
-          unit:'kcal',
-          step: 50,
-          type: 'slider',
-          getIcon(){
-              return (
-                <View>
-                    <MaterialCommunityIcons
-                        name='food'
-                        color={'black'}
-                        size={35}
-                    />
-                </View>
-              )
-          }},
+            sleep: {displayName:'Sleep',
+                max: 24,
+                unit:'hours',
+                step: 1,
+                type: 'slider',
+                getIcon(){
+                    return (
+                        <View>
+                            <FontAwesome
+                                name='bed'
+                                color={'black'}
+                                size={35}
+                            />
+                        </View>
+                    )
+                }
+            },
+            eat: {displayName:'Eat',
+                max: 2200,
+                unit:'kcal',
+                step: 50,
+                type: 'slider',
+                getIcon(){
+                    return (
+                        <View>
+                            <MaterialCommunityIcons
+                                name='food'
+                                color={'black'}
+                                size={35}
+                            />
+                        </View>
+                    )
+                }
+            },
       }
     return typeof metric === 'undefined'
     ? info
