@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {Ionicons} from  '@expo/vector-icons'
+import { FontAwesome5 } from '@expo/vector-icons'; 
 
 
 export default class App extends React.Component {
@@ -13,7 +14,9 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Welcome to React Native!</Text>
-        <Ionicons name='ios-pizza' color='blue' size={100}/>
+        <Ionicons name='ios-pizza' color='blue' size={80}/>
+        
+        <FontAwesome5 name="dumbbell" size={80} color="blue" />
 
       </View>
     );
