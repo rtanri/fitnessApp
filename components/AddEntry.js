@@ -6,6 +6,7 @@ import UdaciSteppers from './UdaciSteppers'
 import DateHeader from './DateHeader'
 import {Ionicons} from '@expo/vector-icons'
 import TextButton from './TextButton'
+import {submitEntry, removeEntry} from '../utils/api'
 
 function SubmitBtn ({ onPress }){
     return (
@@ -71,7 +72,7 @@ export default class AddEntry extends Component {
 
         //Navigate to Home
 
-        //Save to 'DB'
+        submitEntry({key, entry})
 
         //Clear local notification
     }
@@ -80,7 +81,7 @@ export default class AddEntry extends Component {
         const key = timeToString()
         // Update Redux
         // Route to home
-        // Update DB
+        removeEntry(key)
     }
 
     render(){
@@ -91,8 +92,8 @@ export default class AddEntry extends Component {
                 <View>
                     <Ionicons 
                         name="ios-happy" 
-                        size={24} 
-                        color="black" 
+                        size={150} 
+                        color="grey" 
                     />
                     <Text>You already logged your information for today</Text>
                     <TextButton onPress={this.reset}>
