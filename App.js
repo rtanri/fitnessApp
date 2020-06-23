@@ -10,7 +10,7 @@ export default class App extends React.Component {
     return (
       <Provider store={createStore(reducer)}>
         <SafeAreaView style={{flex:1}}>
-          <View>
+          <View style={{flex:1}} >
             <AddEntry />
           </View>
         </SafeAreaView>
