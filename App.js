@@ -4,6 +4,7 @@ import AddEntry from './components/AddEntry'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux' //wrap redux into our application
 import reducer from  './reducers'
+import History from './components/History'
 
 export default class App extends React.Component {
   render(){
@@ -11,7 +12,7 @@ export default class App extends React.Component {
       <Provider store={createStore(reducer)}>
         <SafeAreaView style={{flex:1}}>
           <View style={{flex:1}} >
-            <AddEntry />
+            <History />
           </View>
         </SafeAreaView>
       </Provider>

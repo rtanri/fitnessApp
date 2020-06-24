@@ -30,5 +30,6 @@ const styles= StyleSheet.create({
     metricCounter: {
         width: 85,
         justifyContent: 'center',
+        alignItems: 'center',
     }, 
 })
