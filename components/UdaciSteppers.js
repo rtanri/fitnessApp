@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, TouchableOpacity, Platform} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, Platform} from 'react-native'
 import {FontAwesome, Entypo} from '@expo/vector-icons'
 import {white, gray, purple} from '../utils/colors'
 
