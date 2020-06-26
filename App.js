@@ -1,23 +1,11 @@
-import React from 'react'
-import { View, SafeAreaView } from 'react-native'
-// import AddEntry from './components/AddEntry'
-import {createStore} from 'redux'
-import {Provider} from 'react-redux' //wrap redux into our application
-import reducer from  './reducers'
-import History from './components/History'
+import React from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import FitnessApp from './FitnessApp';
 
-export default class App extends React.Component {
-  render(){
-    return (
-      <Provider store={createStore(reducer)}>
-        <SafeAreaView style={{flex:1}}>
-          <View style={{flex:1}} >
-           <View style={{height:20}} />
-            <History />
-          </View>
-        </SafeAreaView>
-      </Provider>
-    );
-  }
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <FitnessApp />
+    </SafeAreaProvider>
+  );
 }
-

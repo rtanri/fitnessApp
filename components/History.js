@@ -9,6 +9,9 @@ import {white} from '../utils/colors'
 import DateHeader from './DateHeader'
 import MetricCard from './MetricCard'
 
+
+
+
 class History extends Component {
     componentDidMount() {
         const {dispatch} = this.props
@@ -99,3 +102,31 @@ function mapStateToProps(entries){
 }
 
 export default connect(mapStateToProps)(History)
+
+
+
+
+
+//Try to work on stacking detailed metrics card
+// function DetailScreen({ navigation }) {
+//     return (
+//       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//         <Text>Detail screen</Text>
+//         <Button
+//           title="Go to Details"
+//           onPress={() => navigation.navigate('Details')}
+//         />
+//       </View>
+//     );
+//   }
+  
+//   const HistoryStack = createStackNavigator();
+  
+//   function HistoryStackScreen() {
+//     return (
+//       <HistoryStack.Navigator>
+//         <HistoryStack.Screen name="History" component={History} />
+//         <HistoryStack.Screen name="Details" component={DetailsScreen} />
+//       </HistoryStack.Navigator>
+//     );
+//   }
