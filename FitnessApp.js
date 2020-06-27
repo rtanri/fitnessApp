@@ -66,13 +66,14 @@ export default class FitnessApp extends React.Component {
           <NavigationContainer>
               <Stack.Navigator >
                 <Stack.Screen name="TabNav" component={TabNav} 
-                  options={{title:"HISTORY"}} 
+                  options={{
+                    title:"HISTORY",
+                  }} 
                 />
                 <Stack.Screen name="EntryDetail" component={EntryDetail}
                   options= {{
                     headerTintColor: white,
                     headerStyle:{backgroundColor: purple},
-                    title: "Entry Detail"
                   }}
                  />
               </Stack.Navigator>
