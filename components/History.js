@@ -10,9 +10,8 @@ import DateHeader from './DateHeader'
 import MetricCard from './MetricCard'
 
 
-
-
 class History extends Component {
+
     componentDidMount() {
         const {dispatch} = this.props
 
@@ -33,11 +32,12 @@ class History extends Component {
              ? <View>
                 <DateHeader date={formattedDate}/>
                 <Text style={styles.noDataText}>
-                    {today}
+                     {today}
+                     {/* you can edit this into JSON */}
                 </Text>
              </View>
-             : <TouchableOpacity onPress={() => console.log('Pressed!')} >
-                {/* <Text>{JSON.stringify(metrics)}</Text> */}
+             : <TouchableOpacity onPress={() => 
+                    this.props.navigation.navigate("EntryDetail", {entryId:key})} >
                 <MetricCard date={formattedDate} metrics={metrics} />
              </TouchableOpacity>
             }
