@@ -10,9 +10,10 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux' //wrap redux into our application
 import reducer from  './reducers'
 import History from './components/History'
-import {FontAwesome} from '@expo/vector-icons'
+import {Ionicons, FontAwesome} from '@expo/vector-icons'
 import {white, purple} from './utils/colors'
 import EntryDetail from './components/EntryDetail'
+import Live from './components/Live'
 
 
 //Config for TabNav
@@ -26,6 +27,11 @@ const RouteConfigs = {
     name: "Add Entry",
     component: AddEntry,
     options: {tabBarIcon: ({tintColor}) => <FontAwesome name='plus-square' size={30} color={tintColor} />, title: 'Add Entry'}
+  },
+  Live: {
+    name:"Live",
+    component: Live,
+    options: {tabBarIcon: ({tintColor}) => <Ionicons name='ios-speedometer' size={30} color={tintColor}/>, title: 'Live' }
   }
 }
 
@@ -47,6 +53,7 @@ function TabNav() {
           }}>
         <Tab.Screen {...RouteConfigs['History']} />
         <Tab.Screen {...RouteConfigs['AddEntry']} />
+        <Tab.Screen {...RouteConfigs['Live']} />
       </Tab.Navigator>
   );
 }
