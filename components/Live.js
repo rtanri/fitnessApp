@@ -10,31 +10,29 @@ import {calculateDirection} from '../utils/helpers'
 export default class Live extends Component {
   state = {
     coords: null,
-    status: 'granted',
+    status: null,
     direction: ''
   }
   //We need to check if we are in the right position to ask the location
   componentDidMount(){
-      Permissions.getAsync(Permissions.LOCATION)
+      this.askPermission()
+  }
+  
+  askPermission = () => {
+    Permissions.askAsync(Permissions.LOCATION)
         .then(({status}) => {
-            if(status === 'granted'){
+            if (status === 'granted'){
                 return this.setLocation()
             }
             this.setState(() => ({status}))
         })
-        .catch((error) => {
-            console.warn('Error getting Location Permission: ', error)
-            this.setState(() => ({status: 'undetermined'}))
-        })
-  }
-  
-  askPermission = () => {
-
+        .catch((error) => console.warn('error asking Location permission: ', error))
   }
 
+  //this setLocation will be called when we confirmed to have a correct permission for locations
   setLocation = () => {
       Location.watchPositionAsync({
-          enableHighAccuracy: true,
+          enableHighAccuracy: true, //bcos we care on very small changes
           timeInterval: 1,
           distanceInterval: 1,
       }, ({coords}) => {
@@ -86,7 +84,7 @@ export default class Live extends Component {
 
         <View style={styles.directionContainer}>
             <Text style={styles.header}>You're heading</Text>
-            <Text style={styles.direction}>North</Text>
+            <Text style={styles.direction}>{direction}</Text>
         </View>
 
         <View style={styles.metricContainer}>
@@ -95,9 +93,17 @@ export default class Live extends Component {
                     Altitude
                 </Text>
                 <Text style={[styles.subHeader, {color: white}]}>
-                    {200} feet
+                    {Math.round(coords.altitude * 3.2808)} Feet
                 </Text>
             </View>
+            <View style={styles.metric}>
+                <Text style={[styles.header, {color: white}]}>
+                    Speed
+                </Text>
+                <Text style={[styles.subHeader, {color: white}]}>
+                    {(coords.speed * 2.2369).toFixed(1)} MPH
+                </Text>
+          </View>
         </View>
 
       </View>
