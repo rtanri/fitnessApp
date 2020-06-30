@@ -14,6 +14,7 @@ import {Ionicons, FontAwesome} from '@expo/vector-icons'
 import {white, purple} from './utils/colors'
 import EntryDetail from './components/EntryDetail'
 import Live from './components/Live'
+import {setLocalNotification} from './utils/helpers'
 
 
 //Config for TabNav
@@ -65,6 +66,10 @@ const Stack = createStackNavigator();
 
 //APP
 export default class FitnessApp extends React.Component {
+  componentDidMount(){
+    setLocalNotification()
+  }
+  
   render(){
     return (
 
