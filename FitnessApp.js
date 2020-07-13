@@ -1,19 +1,22 @@
 import React from 'react'
+import { View, Platform, SafeAreaView, StyleSheet } from 'react-native'
 import {NavigationContainer} from '@react-navigation/native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs'
 import {createStackNavigator} from '@react-navigation/stack'
+import {Ionicons, FontAwesome} from '@expo/vector-icons'
 
-import { View, Platform, SafeAreaView, StyleSheet } from 'react-native'
-import AddEntry from './components/AddEntry'
+
 import {createStore} from 'redux'
 import {Provider} from 'react-redux' //wrap redux into our application
 import reducer from  './reducers'
+
 import History from './components/History'
-import {Ionicons, FontAwesome} from '@expo/vector-icons'
-import {white, purple} from './utils/colors'
+import AddEntry from './components/AddEntry'
 import EntryDetail from './components/EntryDetail'
 import Live from './components/Live'
+
+import {white, purple} from './utils/colors'
 import {setLocalNotification} from './utils/helpers'
 
 
@@ -79,7 +82,7 @@ export default class FitnessApp extends React.Component {
               <Stack.Navigator >
                 <Stack.Screen name="TabNav" component={TabNav} 
                   options={{
-                    title:"HISTORY",
+                    title:"Fitness App",
                   }} 
                 />
                 <Stack.Screen name="EntryDetail" component={EntryDetail}

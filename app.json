@@ -11,6 +11,12 @@
       "android",
       "web"
     ],
+    "ios":{
+      "bundleIdentifier": "org.fitnessapp.exp"
+    },
+    "android": {
+      "package": "org.fitnessapp.exp"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
